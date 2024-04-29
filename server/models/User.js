@@ -22,9 +22,6 @@ const userSchema = new Schema({
     required: true,
     minlength: 8
   },
-  team: { type: Schema.Types.ObjectId, ref: "Team" },
-  projects: [{ type: Schema.Types.ObjectId, ref: "Project" }],
-  tasks: [{ type: Schema.Types.ObjectId, ref: "Task" }],
 });
 
 const User = model('User', userSchema);

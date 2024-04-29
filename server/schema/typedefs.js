@@ -16,20 +16,20 @@ const typeDefs = gql`
     password: String!
   }
 
-  input: AddBalance {
-    value: integer!
-    currency: string!
+  input AddBalance {
+    value: String!
+    currency: String!
   }
 
   type TotalBalance {
-      value: integer!
+      value: String!
       currency: String!
       change: String
       user: ID!
     }
   
   type CurrencyBalance {
-    value: integer!
+    value: String!
     currency: String!
     change: String
     user: ID!
@@ -44,8 +44,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    login(email: String!, password: String!)
-    addUser(input: UserInput!)
+    login(email: String!, password: String!): String
+    addUser(input: UserInput!): User
     addToBalance(userId: ID!, input: AddBalance): TotalBalance
   }
 `;
