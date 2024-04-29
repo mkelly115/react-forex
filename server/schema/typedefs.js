@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-    type User {
+  type User {
     _id: ID
     firstName: String
     lastName: String
@@ -14,15 +14,39 @@ const typeDefs = gql`
     lastName: String!
     email: String!
     password: String!
-    teamId: ID
   }
 
-    type Query {
-    fill out later
+  input: AddBalance {
+    value: integer!
+    currency: string!
+  }
+
+  type TotalBalance {
+      value: integer!
+      currency: String!
+      change: String
+      user: ID!
+    }
+  
+  type CurrencyBalance {
+    value: integer!
+    currency: String!
+    change: String
+    user: ID!
+  }
+
+  type Query {
+   me: User
+   user: [User]
+   balance(id: ID!): TotalBalance
+   currentCurrency(id: ID!): CurrencyBalance
+
   }
 
   type Mutation {
-    fill out later
+    login(email: String!, password: String!)
+    addUser(input: UserInput!)
+    addToBalance(userId: ID!, input: AddBalance): TotalBalance
   }
 `;
 
