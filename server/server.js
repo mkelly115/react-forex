@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
-const { typeDefs, resolvers } = require('dont forget to put schema here dumbass'); 
+const { typeDefs, resolvers } = require('./schema/index'); 
 
 const app = express();
 
