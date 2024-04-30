@@ -7,6 +7,8 @@ const typeDefs = gql`
     lastName: String
     email: String
     password: String
+    balance: String
+    currentCurrency: String
   }
 
   input UserInput {
@@ -22,11 +24,11 @@ const typeDefs = gql`
   }
 
   type TotalBalance {
-      value: String!
-      currency: String!
-      change: String
-      user: ID!
-    }
+    value: String!
+    currency: String!
+    change: String
+    user: ID!
+  }
   
   type CurrencyBalance {
     value: String!
@@ -36,11 +38,10 @@ const typeDefs = gql`
   }
 
   type Query {
-   me: User
-   user: [User]
-   balance(id: ID!): TotalBalance
-   currentCurrency(id: ID!): CurrencyBalance
-
+    me: User
+    user(id: ID!): User
+    balance(id: ID!): TotalBalance
+    currentCurrency(id: ID!): CurrencyBalance
   }
 
   type Mutation {

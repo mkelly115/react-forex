@@ -22,6 +22,34 @@ const userSchema = new Schema({
     required: true,
     minlength: 8
   },
+  balance: {
+    value: {
+      type: Number,
+      default: 0
+    },
+    currency: {
+      type: String,
+      default: 'USD'
+    },
+    change: {
+      type: Number,
+      default: 0
+    }
+  },
+  currentCurrency: {
+    value: {
+      type: Number,
+      default: 0
+    },
+    currency: {
+      type: String,
+      default: 'USD'
+    },
+    change: {
+      type: Number,
+      default: 0
+    }
+  }
 });
 
 const User = model('User', userSchema);
