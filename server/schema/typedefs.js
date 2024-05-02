@@ -42,6 +42,7 @@ const typeDefs = gql`
     user(id: ID!): User
     balance(id: ID!): TotalBalance
     currentCurrency(id: ID!): CurrencyBalance
+    allUsers: [User] 
   }
 
   type Mutation {

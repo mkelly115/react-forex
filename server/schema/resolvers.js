@@ -10,9 +10,12 @@ const resolvers = {
       }
       throw new AuthenticationError("You are not authenticated");
     },
+    allUsers: async () => {
+      return await User.find();
+    },
     user: async (parent, args) => {
       return await User.findById(args.id)
-        .populate("projects");
+        .populate("account");
     },
     balance: async (parent, args) => {
       const user = await User.findById(args.id);
@@ -39,7 +42,7 @@ const resolvers = {
       };
     }
   },
-  
+
   Mutation: {
     login: async (_, { email, password }) => {
       // Implementation for login mutation
