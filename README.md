@@ -7,3 +7,4 @@ Ongoing effort:
 Update Back end code
 
 Review resolvers, models, and schema.
+Resolvers need update, models hold up.
