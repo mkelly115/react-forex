@@ -24,3 +24,5 @@ startApolloServer().then(() => {
 }).catch(error => {
   console.error('Error starting Apollo Server:', error);
 });
+
+// Still Having issues with this running correctly??
